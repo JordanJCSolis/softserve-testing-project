@@ -1,0 +1,59 @@
+# Exclusions
+# Java related
+target/**
+*.jar
+*.war
+*.ear
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings/
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+test-output/
+reports/
+extent.properties
+extent-config.xml
+
+# Extent report properties
+extent-report-properties/
+
+# WebDrivers
+*.exe
+*.bin
+web-drivers/*
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# slf4j log folder (under tests)
+logs
+
+
+# Exceptions
+# WebDrivers
+!web-drivers/.gitkeep

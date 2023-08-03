@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project coordinates -->
+    <groupId>com.softserveinc</groupId>
+    <artifactId>softserve-ui-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- Execution default variables -->
+        <default.test.browser>edge</default.test.browser>
+        <default.test.config.file>default</default.test.config.file>
+        <default.test.env>prod</default.test.env>
+        <default.test.report>spark</default.test.report>
+
+        <!-- Dependencies variables -->
+        <junit.version>5.9.1</junit.version>
+        <testng.version>7.6.1</testng.version>
+        <cucumber.version>7.3.4</cucumber.version>
+        <slf4j.version>2.20.0</slf4j.version>
+<!--        <slf4j.version>2.0.3</slf4j.version>-->
+
+        <selenium.version>4.5.3</selenium.version>
+
+        <vimalselvam.extentreports.version>3.1.1</vimalselvam.extentreports.version>
+        <aventstack.extentreports.version>5.0.9</aventstack.extentreports.version>
+        <grasshopper.extentreports.version>1.5.1</grasshopper.extentreports.version>
+
+        <!-- Apache Maven Compiler Plugin variables -->
+        <java.version>11</java.version>
+        <source.encoding>UTF-8</source.encoding>
+
+        <!-- Maven surefire plugin variables -->
+        <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+        <suite.basepath>src/test/resources/test-suite</suite.basepath>
+    </properties>
+
+    <dependencies>
+        <!-- Apache Commons Lang dependency -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+        <!-- JUnit dependencies -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <!--                    <scope>test</scope>-->
+        </dependency>
+
+        <!-- TestNG dependencies -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+<!--            <scope>test</scope>-->
+        </dependency>
+
+        <!-- Cucumber dependencies -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+        <!--
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- slf4j dependencies -->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
+<!--            <version>${slf4j.version}</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-simple</artifactId>-->
+<!--            <version>${slf4j.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+
+        <!-- Typesafe dependencies -->
+        <!-- https://mvnrepository.com/artifact/com.typesafe/config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <!-- Selenium dependencies -->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <!-- extent reports dependencies -->
+        <!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport -->
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>cucumber-extentsreport</artifactId>
+            <version>${vimalselvam.extentreports.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${aventstack.extentreports.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>${grasshopper.extentreports.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Screenshot provider dependency -->
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>2.41.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Define resources -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
+        <!-- Define test resources -->
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+
+        <plugins>
+            <!-- Apache Maven Compiler Plugin -->
+            <!-- https://maven.apache.org/plugins/maven-compiler-plugin/ -->
+            <!-- Compile Using -source and -target javac Options -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${source.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- Maven surefire plugin -->
+            <!-- https://maven.apache.org/surefire/maven-surefire-plugin/ -->
+            <!-- Using TestNG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+
+                <!-- Maven surefire plugin configuration -->
+                <configuration>
+                    <!-- Inclusions and Exclusions -->
+                    <includes>
+                        <include>**/TestRunner.java</include>
+                    </includes>
+
+                    <!-- Test Suites configurations -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite.basepath}/feature-test-suite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <!-- System Properties - Variables needed to run -->
+                    <systemProperties>
+                        <!-- ScreenshotPadding : Variable used to enable/disable padding consideration when screenshot -->
+                        <!-- Values accepted: enable or disable-->
+                        <property>
+                            <name>screenshot.padding</name>
+                            <value>disable</value>
+                        </property>
+                        <!-- Browser -->
+                        <property>
+                            <name>browser</name>
+                            <value>${default.test.browser}</value>
+                        </property>
+                        <!-- Config file -->
+                        <property>
+                            <name>config.file</name>
+                            <value>${default.test.config.file}</value>
+                        </property>
+                        <!-- Environment -->
+                        <property>
+                            <name>env</name>
+                            <value>${default.test.env}</value>
+                        </property>
+                        <!-- Preferred report -->
+                        <property>
+                            <name>preferred.report</name>
+                            <value>${default.test.report}</value>
+                        </property>
+                    </systemProperties>
+
+                </configuration>
+
+                <!-- Maven surefire plugin dependencies -->
+                <dependencies>
+                    <!-- Maven surefire plugin TestNG dependency -->
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>${maven.surefire.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
