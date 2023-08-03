@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Sugar " verbose="2">
+
+    <listeners>
+        <listener class-name="core.extentreport.listener.testnglistener.TestNgListener"/>
+    </listeners>
+
+    <test name="Ui automation test execution">
+        <classes>
+            <class name="runner.TestRunner" />
+        </classes>
+    </test>
+</suite>
